@@ -1,0 +1,21 @@
+---
+layout: default
+active_menu: post
+---
+<div class="mb-4">
+	<h2 class="">{{page.title}}</h2>
+	<div class="text-muted">
+		{%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
+		{{ page.date | date: date_format }} &middot; 
+		<a href="">Template</a>, <a href="">Admin</a>
+	</div>
+</div>
+<div class="mb-3">
+	{%- if page.thumb -%}
+		<div class="col-sm-4 float-right px-0 pl-sm-3">
+			<img src="{{ page.thumb }}" alt="{{ page.title | escape }}" class="rounded mb-3">
+		</div>
+	{%- endif -%}
+	{{content}}
+	<a href="">Template</a>, <a href="">Admin</a>
+</div>

@@ -1,0 +1,41 @@
+<header class="border-bottom py-1 mb-2">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-11 col-xl-9 mx-auto dropdown">
+				<nav class="navbar navbar-expand-lg navbar-light bg-white px-0">
+					<a class="navbar-brand" href="/">
+						<img src="assets/img/logo-cangkerkopi.png" alt="{{site.title}}">
+					</a>
+					<button class="navbar-toggler border-0" type="button" data-toggle="dropdown">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="dropdown-menu dropdown-menu-right">
+						{% for item in site.data.menu %}
+							{% if page.active_menu == item.id %}
+							<a class="dropdown-item active" href="{{item.link}}">
+							{% else %}
+							<a class="dropdown-item" href="{{item.link}}">
+							{% endif %}
+								{{item.label}}
+							</a>
+						{% endfor %}
+					</div>
+
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav ml-auto">
+							{% for item in site.data.menu %}
+								{% if page.active_menu == item.id %}
+								<li class="nav-item active">
+								{% else %}
+								<li class="nav-item">
+								{% endif %}
+									<a class="nav-link" href="{{item.link}}">{{item.label}}</a>
+								</li>
+							{% endfor %}
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+</header>

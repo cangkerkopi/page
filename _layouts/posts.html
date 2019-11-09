@@ -1,0 +1,56 @@
+---
+layout: default
+---
+
+{%- if site.posts.size > 0 -%}
+	<div class="mb-3">
+		<h2 class="mb-4">
+			{{ page.title | default: "Posts" }}
+		</h2>
+		{%- for post in paginator.posts -%}
+			<div class="row mb-3">
+				{%- if post.thumb -%}
+					<div class="col-sm-4">
+						<img src="{{ post.thumb }}" alt="{{ post.title | escape }}" class="rounded mb-3">
+					</div>
+				{%- endif -%}
+				<div class="col-sm">
+					<div class="mb-2">
+						<a href="{{ post.url | relative_url }}"><h5 class="mb-1">{{ post.title | escape }}</h5></a>
+						<div class="text-muted">
+							{%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
+							{{ post.date | date: date_format }}
+							<a href="">Template</a>, <a href="">Admin</a>
+						</div>
+					</div>
+					{%- if post.excerpt -%}
+						<p>{{ post.excerpt }}</p>
+					{%- endif -%}
+				</div>
+			</div>
+		{%- endfor -%}
+	</div>
+{%- endif -%}
+
+{% if paginator.total_pages > 1 %}
+	{% if paginator.previous_page %}
+		<a href="{{ paginator.first_page_path | prepend: site.baseurl }}" class="btn btn-light"><i class="fas fa-angle-double-left"></i></a>
+		<a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="btn btn-light"><i class="fas fa-angle-left"></i></a>
+	{% endif %}
+	{% for i in (1.. paginator.total_pages) %}
+		{% assign class = '' %}
+		{% if paginator.page == i %}
+			{% assign class = ' disabled' %}
+		{% endif %}
+		{% if i == 1 %}
+			<a href="blog/" class="btn btn-light{{class}}">{{i}}</a>
+		{% else %}
+			<a href="blog/{{i}}" class="btn btn-light{{class}}">{{i}}</a>
+		{% endif %}
+	{% endfor %}
+	{% if paginator.next_page %}
+		<a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="btn btn-light"><i class="fas fa-angle-right"></i></a>
+		<a href="{{ paginator.last_page_path | prepend: site.baseurl }}" class="btn btn-light"><i class="fas fa-angle-double-right"></i></a>
+	{% endif %}
+</ul>
+{% endif %}

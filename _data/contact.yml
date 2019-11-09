@@ -1,0 +1,20 @@
+- id: github
+  name: Github
+  label: hayyi2
+  link: 'https://github.com/hayyi2/'
+  icon: 'fab fa-github'
+- id: email
+  name: Email
+  label: ahmadhayyi2@gmail
+  link: 'mailto:ahmadhayyi2@gmail.com'
+  icon: 'fa fa-envelope'
+- id: facebook
+  name: Facebook
+  label: hayyi2
+  link: 'https://facebbok.com/hayyi2/'
+  icon: 'fab fa-facebook'
+- id: telegram
+  name: Telegram
+  label: hayyi2
+  link: 'https://web.telegram.org/#/im?p=@hayyi2'
+  icon: 'fab fa-telegram'

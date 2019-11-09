@@ -1,0 +1,12 @@
+- id: home
+  label: Beranda
+  link: ''
+- id: post
+  label: Blog
+  link: '/blog/'
+- id: project
+  label: Proyek
+  link: '/proyek/'
+- id: tentang
+  label: Tentang
+  link: '/tentang/'

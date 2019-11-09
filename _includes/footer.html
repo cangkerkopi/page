@@ -1,0 +1,35 @@
+<footer class="border-top py-4">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-11 col-xl-9 mx-auto">
+				<div class="my-3">
+					<a href="/"><img src="assets/img/logo-cangkerkopi.png" alt="{{site.title}}"></a>
+				</div>
+				<div class="row mb-1">
+					<div class="col-sm-6 mb-3">
+						<p>{{site.description}}</p>
+					</div>
+					<div class="col-sm-3 mb-3">
+						<ul class="list-unstyled">
+							{% for item in site.data.contact %}
+								<li>
+									<a href="{{item.link}}" target="_blank"><i class="{{item.icon}} fa-fw mr-1"></i>{{item.label}}</a>
+								</li>
+							{% endfor %}
+						</ul>
+					</div>
+					<div class="col-sm-3 mb-3">
+						<ul class="pl-3">
+							{% for item in site.data.menu %}
+								<li>
+									<a href="{{item.link}}">{{item.label}}</a>
+								</li>
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+				<span class="text-muted"> &copy; 2019 Copiright <a href="">{{site.title}}</a></span>
+			</div>
+		</div>
+	</div>
+</footer>
